@@ -1,5 +1,7 @@
 # TwitchBot Queue System
 
+![](http://bytevaultstudio.se/ShareX/chrome_PHcT1UvggU.png)
+
 ### The idea
 This would be perfect for when you are making gathers or simply was challanged by one of your viewers.
 Run the application, set it up and watch the list expand expand with users who wants to match against or with you.
@@ -20,5 +22,3 @@ It has an easy to understand UI and should be pretty straight forward on how to 
 
 ### NOTE:
 You must verify if the bot writes anything to the chat once it has been started. If it doesn't, please verify settings and try again. There is no way to know if the bot was successful.
-
-![](http://bytevaultstudio.se/ShareX/chrome_PHcT1UvggU.png)
