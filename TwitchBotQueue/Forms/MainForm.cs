@@ -300,5 +300,11 @@ namespace TwitchBotQueue
 
             GC.Collect();
         }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (twitchBot != null)
+                twitchBot.KillThreads();
+        }
     }
 }
