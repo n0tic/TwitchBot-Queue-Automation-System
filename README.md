@@ -1,4 +1,4 @@
-# TwitchBotQueueSystem
+# TwitchBot QueueSystem
 This is a twitch bot application which connects to a channel-chat.
 It looks for specific commands like "!join" and executes commands depending on the chat message.
 It has an easy to understand user interface and should be pretty straight forward on how to use.
