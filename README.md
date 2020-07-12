@@ -2,7 +2,7 @@
 
 ![](http://bytevaultstudio.se/ShareX/chrome_PHcT1UvggU2.png)
 
-### The idea
+## The idea
 This would be perfect for when you are making gathers or simply was challanged by one of your viewers.
 Run the application, set it up and watch the list expand with users who wants to match against or with you.
 You control the queue, you control everything.
