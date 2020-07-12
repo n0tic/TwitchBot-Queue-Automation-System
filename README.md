@@ -1,6 +1,6 @@
 # TwitchBot Queue System
 
-![](http://bytevaultstudio.se/ShareX/chrome_PHcT1UvggU.png)
+![](http://bytevaultstudio.se/ShareX/chrome_PHcT1UvggU2.png)
 
 ### The idea
 This would be perfect for when you are making gathers or simply was challanged by one of your viewers.
