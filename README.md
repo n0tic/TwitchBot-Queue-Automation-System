@@ -15,4 +15,4 @@ It has an easy to understand user interface and should be pretty straight forwar
 ### NOTE:
 You must verify if the bot writes anything to the chat once it has been started. If it doesn't, please verify settings and try again.
 
-![](http://bytevaultstudio.se/ShareX/NVIDIA_Share_D7x5iklfZu2.png)
+![](http://bytevaultstudio.se/ShareX/chrome_PHcT1UvggU.png)
