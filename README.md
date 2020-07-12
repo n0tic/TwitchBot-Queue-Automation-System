@@ -1,7 +1,13 @@
-# TwitchBot QueueSystem
+# TwitchBot Queue System
+
+### The idea
+This would be perfect for when you are making gathers or simply was challanged by one of your viewers.
+Run the application, set it up and watch the list expand expand with users who wants to match against or with you.
+You control the queue, you control everything.
+   
 This is a twitch bot application which connects to a channel-chat.
 It looks for specific commands like "!join" and executes commands depending on the chat message.
-It has an easy to understand user interface and should be pretty straight forward on how to use.
+It has an easy to understand UI and should be pretty straight forward on how to use.
 
 ### Chat commands
 > "!cmds", "!cmd" - Shows the commands list.   
@@ -13,6 +19,6 @@ It has an easy to understand user interface and should be pretty straight forwar
 2. Sign in to the account you want the bot to operate from and request an oAuth key from https://twitchapps.com/tmi/
 
 ### NOTE:
-You must verify if the bot writes anything to the chat once it has been started. If it doesn't, please verify settings and try again.
+You must verify if the bot writes anything to the chat once it has been started. If it doesn't, please verify settings and try again. There is no way to know if the bot was successful.
 
 ![](http://bytevaultstudio.se/ShareX/chrome_PHcT1UvggU.png)
