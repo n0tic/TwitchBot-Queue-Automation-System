@@ -46,7 +46,7 @@ namespace TwitchBotQueue
                 {
                     if(mainRef.twitchBot != null && mainRef.twitchBot.twitchChat != null)
                         if (mainRef.twitchBot.twitchChat.Connected)
-                            mainRef.twitchBot.SendMsg("@" + playername + ": You are already in the queue, or your name is invalid.");
+                            mainRef.twitchBot.SendMsg("@" + playername + ": You are already in the queue, your name is invalid or you have already been in game today.");
                     return new Player();
                 }
             }
