@@ -26,6 +26,9 @@ It has an easy to understand UI and should be pretty straight forward on how to 
 ### NOTE:
 You must verify if the bot writes anything to the chat once it has been started. If it doesn't, please verify settings and try again. There is no way to know if the bot was successful.
 
+### Bugs:
+There was a crash when I was messing around with starting and stopping the bot as well as adding/deleting automations. I have not been able to replicate this crash so I am unable to fix it. Please report all bugs and crashes! Provide all information you can!
+
 # Third Parties Licenses
 ### Metroframework Font & Form
 ```
