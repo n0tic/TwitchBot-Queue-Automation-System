@@ -59,6 +59,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Automation.cs" />
+    <Compile Include="AutomationManager.cs" />
+    <Compile Include="Data\Automations.cs" />
     <Compile Include="Data\ConnectionData.cs" />
     <Compile Include="Data\Options.cs" />
     <Compile Include="Forms\MainForm.cs">
@@ -80,6 +83,7 @@
     <Compile Include="Forms\OptionsForm.Designer.cs">
       <DependentUpon>OptionsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SaveLoad.cs" />
     <Compile Include="TwitchChatBot.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -120,6 +124,13 @@
   <ItemGroup>
     <Content Include="Icon.ico" />
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\iconfinder_Tick_2001877.ico" />
+    <None Include="Resources\iconfinder_Stop_2001885.ico" />
+    <None Include="Resources\iconfinder_Play_2001879.ico" />
+    <None Include="Resources\iconfinder_flat-style-circle-delete-trash_1312512.ico" />
+    <None Include="Resources\iconfinder_Plus_2001887.ico" />
+    <None Include="Resources\iconfinder_Rewind_2001873.ico" />
+    <None Include="Resources\iconfinder_Fast_Forward_2001867.ico" />
     <None Include="Resources\iconfinder_Close_2001866.ico" />
     <None Include="Resources\iconfinder_Settings_2001888.ico" />
     <None Include="Resources\iconfinder_Retract_2001886.ico" />

@@ -22,12 +22,14 @@ namespace TwitchBotQueue
         public Queue queue;
         public Options options = new Options();
         public TwitchChatBot twitchBot;
+        public AutomationManager autoManager;
 
         public MainForm()
         {
             InitializeComponent();
 
             queue = new Queue(this);
+            autoManager = new AutomationManager(this);
 
             LoadSettings();
 
@@ -35,7 +37,7 @@ namespace TwitchBotQueue
             {
                 if (MessageBox.Show("It appears that this is the first time you are running this application. Setup is required.", "Setup Required!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation) == DialogResult.OK)
                 {
-                    pictureBox1_Click(null, EventArgs.Empty);
+                    SettingsButton_Click(null, EventArgs.Empty);
                 }
             }
 
@@ -46,22 +48,9 @@ namespace TwitchBotQueue
             PlayerNameText2.Text = "";
             PlayerQueuedText2.Text = "";
             PlayerDeQueuedText2.Text = "";
-        }
 
-        private void AddPlayerButton_Click(object sender, EventArgs e)
-        {
-            NewPlayerForm np = new NewPlayerForm();
-            if (np.ShowDialog() == DialogResult.OK)
-            {
-                if (!string.IsNullOrEmpty(np.Inputfield_playername.Text))
-                {
-                    Player player = queue.QueuePlayer(string.Concat(np.Inputfield_playername.Text.Where(char.IsLetterOrDigit)));
-                    if (!string.IsNullOrEmpty(player.playerName))
-                        QueueList.Items.Add(player.playerName);
-                }
-            }
-
-            GC.Collect();
+            metroTabControl1.SelectTab(0);
+            metroTabControl2.SelectTab(0);
         }
 
         public void AddPlayerToQueue(string usr)
@@ -94,32 +83,12 @@ namespace TwitchBotQueue
             }));
         }
 
-        private void UnQueuePlayer_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                UnQueuedList.Items.Add(QueueList.SelectedItem);
-                queue.DeQueuePlayer(QueueList.SelectedItem.ToString());
-                QueueList.Items.Remove(QueueList.SelectedItem);
-            }
-            catch(System.Exception)
-            {
-                //Do nothing
-            }
+        public void RunAutomation(Automation automation) {
+            this.Invoke(new Action(() => {
+                if(twitchBot.twitchChat.Connected)
+                    twitchBot.SendMsg(automation.message);
+            }));
         }
-
-        private void ReQueuePlayer_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                QueueList.Items.Add(UnQueuedList.SelectedItem);
-                UnQueuedList.Items.Remove(UnQueuedList.SelectedItem);
-            }
-            catch(System.Exception)
-            {
-                //Do nothing
-            }
-}
 
         private void QueueList_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -170,51 +139,6 @@ namespace TwitchBotQueue
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            if (twitchBot != null)
-            {
-                twitchBot.KillThreads();
-
-                if (twitchBot.twitchChat.Connected)
-                {
-                    StatusIndicator.BackColor = Color.Green;
-                    StartBotButton.Text = "Stop Bot";
-                }
-                else
-                {
-                    StatusIndicator.BackColor = Color.Red;
-                    StartBotButton.Text = "Start Bot";
-                }
-
-                twitchBot = null;
-            }
-
-            OptionsForm ow = new OptionsForm(options);
-            if (ow.ShowDialog() == DialogResult.OK)
-            {
-                options.botName = ow.input_botName.Text;
-                options.channelName = ow.input_channelName.Text;
-                options.password = ow.input_oAuth.Text;
-                options.host = ow.input_host.Text;
-                options.port = (int)ow.input_port.Value;
-                SaveSettings();
-                LoadSettings();
-            }
-
-            GC.Collect();
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
         public void LoadSettings()
         {
             try
@@ -261,7 +185,7 @@ namespace TwitchBotQueue
             {
                 if (MessageBox.Show("It appears that the setup have blank fields. That is not allowed.", "Setup Required!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation) == DialogResult.OK)
                 {
-                    pictureBox1_Click(null, EventArgs.Empty);
+                    SettingsButton_Click(null, EventArgs.Empty);
                     return;
                 }
             }
@@ -269,6 +193,7 @@ namespace TwitchBotQueue
             if (twitchBot == null)
             {
                 twitchBot = new TwitchChatBot(this, options.host, options.port, options.botName, options.password, options.channelName, true);
+                autoManager.StartThreads();
                 if (twitchBot.twitchChat.Connected)
                 {
                     StatusIndicator.BackColor = Color.Green;
@@ -281,6 +206,112 @@ namespace TwitchBotQueue
                 }
             }
             else
+            {
+                twitchBot.KillThreads();
+                autoManager.KillThreads();
+
+                if (twitchBot.twitchChat.Connected)
+                {
+                    StatusIndicator.BackColor = Color.Green;
+                    StartBotButton.Text = "Stop Bot";
+                }
+                else
+                {
+                    StatusIndicator.BackColor = Color.Red;
+                    StartBotButton.Text = "Start Bot";
+                }
+
+                twitchBot = null;
+            }
+
+            autoList_SelectedIndexChanged(null, EventArgs.Empty);
+
+            GC.Collect();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (twitchBot != null)
+                twitchBot.KillThreads();
+
+            autoManager.KillThreads();
+        }
+
+        private void autoList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (autoList.SelectedItem != null)
+                {
+                    Automation auto = autoManager.GetAutomation(autoList.SelectedItem.ToString());
+                    if(auto != null)
+                    {
+                        edit_AutomationNameInputfield.Text = auto.automationName;
+                        edit_Minutes.SelectedItem = auto.interval.ToString();
+                        edit_Active.Checked = auto.active;
+                        edit_Message.Text = auto.message;
+
+                        edit_AutomationNameInputfield.Enabled = true;
+                        edit_Minutes.Enabled = true;
+                        edit_Active.Enabled = true;
+                        edit_Message.Enabled = true;
+
+                        view_AutomationName.Text = auto.automationName;
+                        view_AutomationInterval.Text = auto.interval.ToString() + " Minutes";
+                        view_AutomationActive.Text = auto.active.ToString();
+
+                        if (auto.running) view_AutomationRunningIndicator.BackColor = Color.Green;
+                        else view_AutomationRunningIndicator.BackColor = Color.Red;
+
+                        view_message.Text = auto.message;
+                    }
+                }
+                else
+                {
+                    edit_AutomationNameInputfield.Text = "";
+                    edit_Minutes.SelectedItem = "";
+                    edit_Active.Checked = false;
+                    edit_Message.Text = "";
+
+                    edit_AutomationNameInputfield.Enabled = false;
+                    edit_Minutes.Enabled = false;
+                    edit_Active.Enabled = false;
+                    edit_Message.Enabled = false;
+                }
+            }
+            catch (System.Exception)
+            {
+                //Do nothing
+            }
+        }
+
+        private void AutoMessageInputfield_TextChanged(object sender, EventArgs e)
+        {
+            CharLength.Text = "Characters: " + AutoMessageInputfield.Text.Length.ToString() + "/470";
+            if (AutoMessageInputfield.Text.Length > 470 || AutoMessageInputfield.Text.Length <= 4)
+                CharLength.ForeColor = Color.Red;
+            else
+                CharLength.ForeColor = Color.Black;
+        }
+
+        private void AddAutomationButton_Click(object sender, EventArgs e)
+        {
+            if (AddAutomationNameInputfield.Text.Length > 0 && AutoMessageInputfield.Text.Length <= 470 && AutoMessageInputfield.Text.Length > 4 && autoMinutes.SelectedItem != null && Int32.Parse(autoMinutes.SelectedItem.ToString()) >= 5)
+            {
+                if(autoManager.AddAutomation(AddAutomationNameInputfield.Text, Int32.Parse(autoMinutes.SelectedItem.ToString()), AutoMessageInputfield.Text, autoActive.Checked))
+                {
+                    AddAutomationNameInputfield.Text = "";
+                    autoMinutes.SelectedIndex = -1;
+                    autoMinutes.Focus();
+                    autoActive.Checked = false;
+                    AutoMessageInputfield.Text = "";
+                }
+            }
+        }
+
+        private void SettingsButton_Click(object sender, EventArgs e)
+        {
+            if (twitchBot != null)
             {
                 twitchBot.KillThreads();
 
@@ -298,13 +329,162 @@ namespace TwitchBotQueue
                 twitchBot = null;
             }
 
+            OptionsForm ow = new OptionsForm(options);
+            if (ow.ShowDialog() == DialogResult.OK)
+            {
+                options.botName = ow.input_botName.Text;
+                options.channelName = ow.input_channelName.Text;
+                options.password = ow.input_oAuth.Text;
+                options.host = ow.input_host.Text;
+                options.port = (int)ow.input_port.Value;
+                SaveSettings();
+                LoadSettings();
+            }
+
             GC.Collect();
         }
 
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void MinimizeButton_Click(object sender, EventArgs e) => this.WindowState = FormWindowState.Minimized;
+
+        private void MainCloseButton_Click(object sender, EventArgs e) => Application.Exit();
+
+        private void AddPlayerButton_Click(object sender, EventArgs e)
         {
-            if (twitchBot != null)
-                twitchBot.KillThreads();
+            NewPlayerForm np = new NewPlayerForm();
+            if (np.ShowDialog() == DialogResult.OK)
+            {
+                if (!string.IsNullOrEmpty(np.Inputfield_playername.Text))
+                {
+                    Player player = queue.QueuePlayer(string.Concat(np.Inputfield_playername.Text.Where(char.IsLetterOrDigit)));
+                    if (!string.IsNullOrEmpty(player.playerName))
+                        QueueList.Items.Add(player.playerName);
+                }
+            }
+
+            GC.Collect();
+        }
+
+        private void DeQueuePlayerButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UnQueuedList.Items.Add(QueueList.SelectedItem);
+                queue.DeQueuePlayer(QueueList.SelectedItem.ToString());
+                QueueList.Items.Remove(QueueList.SelectedItem);
+            }
+            catch (System.Exception)
+            {
+                //Do nothing
+            }
+        }
+
+        private void ReQueuePlayerButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                QueueList.Items.Add(UnQueuedList.SelectedItem);
+                UnQueuedList.Items.Remove(UnQueuedList.SelectedItem);
+            }
+            catch (System.Exception)
+            {
+                //Do nothing
+            }
+        }
+
+        private void edit_Message_TextChanged(object sender, EventArgs e)
+        {
+            edit_CharLength.Text = "Characters: " + edit_Message.Text.Length.ToString() + "/470";
+            if (edit_Message.Text.Length > 470 || edit_Message.Text.Length <= 4)
+                edit_CharLength.ForeColor = Color.Red;
+            else
+                edit_CharLength.ForeColor = Color.Black;
+        }
+
+        private void DeleteAutomationButton_Click(object sender, EventArgs e)
+        {
+            if (autoList.SelectedItem != null)
+                autoManager.DeleteAutomation(autoList.SelectedItem.ToString());
+        }
+
+        private void manualStartAutomationButton_Click(object sender, EventArgs e)
+        {
+            if (twitchBot != null && twitchBot.twitchChat != null && twitchBot.twitchChat.Connected && autoList.SelectedItem != null)
+            {
+                Automation auto = autoManager.GetAutomation(autoList.SelectedItem.ToString());
+                if (auto != null)
+                {
+                    if (auto.running && autoManager.timers[auto.threadIndex].Enabled)
+                        return;
+
+                    autoManager.Automation(AutomationManager.AutomationController.Start, autoList.SelectedItem.ToString());
+
+                    autoList_SelectedIndexChanged(null, EventArgs.Empty);
+                }
+            }
+        }
+
+        private void manualStopAutomationButton_Click(object sender, EventArgs e)
+        {
+            if (twitchBot != null && twitchBot.twitchChat != null && twitchBot.twitchChat.Connected && autoList.SelectedItem != null)
+            {
+                Automation auto = autoManager.GetAutomation(autoList.SelectedItem.ToString());
+                if (auto != null)
+                {
+                    MessageBox.Show(auto.automationName + " " + autoManager.timers[auto.threadIndex].Enabled.ToString());
+
+                    if (!auto.running && !autoManager.timers[auto.threadIndex].Enabled)
+                        return;
+
+                    autoManager.Automation(AutomationManager.AutomationController.Stop, autoList.SelectedItem.ToString());
+
+                    autoList_SelectedIndexChanged(null, EventArgs.Empty);
+                }
+            }
+        }
+
+        private void manualSendNowAutomationButton_Click(object sender, EventArgs e)
+        {
+            if (twitchBot != null && twitchBot.twitchChat != null && twitchBot.twitchChat.Connected && autoList.SelectedItem != null)
+            {
+                Automation auto = autoManager.GetAutomation(autoList.SelectedItem.ToString());
+                if (auto != null)
+                {
+                    twitchBot.SendMsg(auto.message);
+                }
+            }
+        }
+
+        private void EditAutomationButton_Click(object sender, EventArgs e)
+        {
+            if (edit_AutomationNameInputfield.Text.Length > 0 && edit_Message.Text.Length <= 470 && edit_Message.Text.Length > 4 && edit_Minutes.SelectedItem != null && Int32.Parse(edit_Minutes.SelectedItem.ToString()) >= 5 && autoList.SelectedItem != null)
+            {
+                Automation auto = autoManager.GetAutomation(autoList.SelectedItem.ToString());
+                if (auto != null)
+                {
+                    string prevString = autoList.SelectedItem.ToString();
+                    string tmpString = edit_AutomationNameInputfield.Text;
+                    if (tmpString.Length > 20) tmpString = tmpString.Substring(0, 20);
+
+                    if(autoManager.DoesNameAlreadyExist(tmpString))
+                    {
+                        MessageBox.Show("This name does already exist. Try again.", "Name already exist!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }    
+
+                    auto.automationName = tmpString;
+                    auto.interval = Int32.Parse(edit_Minutes.SelectedItem.ToString());
+                    auto.active = edit_Active.Checked;
+                    auto.message = edit_Message.Text;
+
+                    edit_AutomationNameInputfield.Text = "";
+                    edit_Minutes.SelectedIndex = -1;
+                    edit_Minutes.Focus();
+                    edit_Active.Checked = false;
+                    edit_Message.Text = "";
+
+                    autoList.Items[autoList.Items.IndexOf(prevString)] = tmpString;
+                }
+            }
         }
     }
 }
