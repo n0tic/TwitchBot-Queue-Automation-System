@@ -1,18 +1,18 @@
-# TwitchBot Queue & Automation System
-
 ![](http://bytevaultstudio.se/ShareX/TwitchBotQueue_BSF7g8ctYd.png)
+![](http://bytevaultstudio.se/ShareX/TwitchBotQueue_VAL29EL0f4.png)
 ![](http://bytevaultstudio.se/ShareX/TwitchBotQueue_PcAL67rkCI.png)
 ![](http://bytevaultstudio.se/ShareX/TwitchBotQueue_ANSwdxY30D.png)
-![](http://bytevaultstudio.se/ShareX/TwitchBotQueue_VAL29EL0f4.png)
 
 ## The idea
 This would be perfect for when you are making gathers or simply was challanged by one of your viewers.
 Run the application, set it up and watch the list expand with users who wants to match against or with you.
 You control the queue, you control everything.
-   
+
+# TwitchBot Queue & Automation System
 This is a twitch bot application which connects to a channel-chat.
-It looks for specific commands like "!join" and executes commands depending on the chat message.
-It has an easy to understand UI and should be pretty straight forward on how to use.
+It looks for specific command like "!join" and puts the user in the queue list.
+It has an easy to understand UI and after setup has been done, start the bot and enjoy.
+You can add automated messages to the system too. It will send the message on intervals or on manual send feature.
 
 ### Chat commands
 > "!cmds", "!cmd" - Shows the commands list.   
@@ -26,7 +26,7 @@ It has an easy to understand UI and should be pretty straight forward on how to 
 ### NOTE:
 You must verify if the bot writes anything to the chat once it has been started. If it doesn't, please verify settings and try again. There is no way to know if the bot was successful.
 
-### Bugs:
+# Bugs:
 There was a crash when I was messing around with starting and stopping the bot as well as adding/deleting automations. I have not been able to replicate this crash so I am unable to fix it. Please report all bugs and crashes! Provide all information you can!
 
 # Third Parties Licenses
