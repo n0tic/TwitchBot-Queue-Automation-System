@@ -486,5 +486,11 @@ namespace TwitchBotQueue
                 }
             }
         }
+
+        private void AboutButton_Click(object sender, EventArgs e)
+        {
+            AboutWindow aw = new AboutWindow();
+            aw.ShowDialog();
+        }
     }
 }

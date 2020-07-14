@@ -30,10 +30,7 @@
         {
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.QueueTab = new MetroFramework.Controls.MetroTabPage();
-            this.ReQueuePlayerButton = new System.Windows.Forms.PictureBox();
-            this.DeQueuePlayerButton = new System.Windows.Forms.PictureBox();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
-            this.AddPlayerButton = new System.Windows.Forms.PictureBox();
             this.QueueList = new System.Windows.Forms.ListBox();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.UnQueuedList = new System.Windows.Forms.ListBox();
@@ -54,11 +51,8 @@
             this.metroTabControl2 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.metroLabel24 = new MetroFramework.Controls.MetroLabel();
-            this.manualSendNowAutomationButton = new System.Windows.Forms.PictureBox();
             this.metroLabel18 = new MetroFramework.Controls.MetroLabel();
-            this.manualStopAutomationButton = new System.Windows.Forms.PictureBox();
             this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
-            this.manualStartAutomationButton = new System.Windows.Forms.PictureBox();
             this.view_AutomationInterval = new MetroFramework.Controls.MetroLabel();
             this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
             this.view_AutomationActive = new MetroFramework.Controls.MetroLabel();
@@ -77,7 +71,6 @@
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.autoMinutes = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
-            this.AddAutomationButton = new System.Windows.Forms.PictureBox();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.metroLabel22 = new MetroFramework.Controls.MetroLabel();
             this.edit_AutomationNameInputfield = new MetroFramework.Controls.MetroTextBox();
@@ -88,28 +81,37 @@
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
             this.edit_Minutes = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
-            this.DeleteAutomationButton = new System.Windows.Forms.PictureBox();
-            this.EditAutomationButton = new System.Windows.Forms.PictureBox();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.autoList = new System.Windows.Forms.ListBox();
+            this.AboutButton = new System.Windows.Forms.PictureBox();
+            this.ReQueuePlayerButton = new System.Windows.Forms.PictureBox();
+            this.DeQueuePlayerButton = new System.Windows.Forms.PictureBox();
+            this.AddPlayerButton = new System.Windows.Forms.PictureBox();
+            this.manualSendNowAutomationButton = new System.Windows.Forms.PictureBox();
+            this.manualStopAutomationButton = new System.Windows.Forms.PictureBox();
+            this.manualStartAutomationButton = new System.Windows.Forms.PictureBox();
+            this.AddAutomationButton = new System.Windows.Forms.PictureBox();
+            this.DeleteAutomationButton = new System.Windows.Forms.PictureBox();
+            this.EditAutomationButton = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.MainCloseButton = new System.Windows.Forms.PictureBox();
             this.MinimizeButton = new System.Windows.Forms.PictureBox();
             this.SettingsButton = new System.Windows.Forms.PictureBox();
             this.metroTabControl1.SuspendLayout();
             this.QueueTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ReQueuePlayerButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DeQueuePlayerButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AddPlayerButton)).BeginInit();
             this.AutomationTab.SuspendLayout();
             this.metroTabControl2.SuspendLayout();
             this.metroTabPage3.SuspendLayout();
+            this.metroTabPage1.SuspendLayout();
+            this.metroTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AboutButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReQueuePlayerButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DeQueuePlayerButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddPlayerButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.manualSendNowAutomationButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.manualStopAutomationButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.manualStartAutomationButton)).BeginInit();
-            this.metroTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddAutomationButton)).BeginInit();
-            this.metroTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DeleteAutomationButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EditAutomationButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -125,7 +127,7 @@
             this.metroTabControl1.Location = new System.Drawing.Point(23, 64);
             this.metroTabControl1.Multiline = true;
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(460, 433);
             this.metroTabControl1.TabIndex = 28;
             // 
@@ -159,28 +161,6 @@
             this.QueueTab.Text = "Queue";
             this.QueueTab.VerticalScrollbarBarColor = true;
             // 
-            // ReQueuePlayerButton
-            // 
-            this.ReQueuePlayerButton.Image = global::TwitchBotQueue.Properties.Resources.iconfinder_Rewind_2001873;
-            this.ReQueuePlayerButton.Location = new System.Drawing.Point(216, 239);
-            this.ReQueuePlayerButton.Name = "ReQueuePlayerButton";
-            this.ReQueuePlayerButton.Size = new System.Drawing.Size(35, 35);
-            this.ReQueuePlayerButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ReQueuePlayerButton.TabIndex = 50;
-            this.ReQueuePlayerButton.TabStop = false;
-            this.ReQueuePlayerButton.Click += new System.EventHandler(this.ReQueuePlayerButton_Click);
-            // 
-            // DeQueuePlayerButton
-            // 
-            this.DeQueuePlayerButton.Image = global::TwitchBotQueue.Properties.Resources.iconfinder_Fast_Forward_2001867;
-            this.DeQueuePlayerButton.Location = new System.Drawing.Point(216, 198);
-            this.DeQueuePlayerButton.Name = "DeQueuePlayerButton";
-            this.DeQueuePlayerButton.Size = new System.Drawing.Size(35, 35);
-            this.DeQueuePlayerButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.DeQueuePlayerButton.TabIndex = 49;
-            this.DeQueuePlayerButton.TabStop = false;
-            this.DeQueuePlayerButton.Click += new System.EventHandler(this.DeQueuePlayerButton_Click);
-            // 
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
@@ -189,17 +169,6 @@
             this.metroLabel7.Size = new System.Drawing.Size(130, 19);
             this.metroLabel7.TabIndex = 48;
             this.metroLabel7.Text = "Add Player Manually";
-            // 
-            // AddPlayerButton
-            // 
-            this.AddPlayerButton.Image = global::TwitchBotQueue.Properties.Resources.iconfinder_Plus_2001887;
-            this.AddPlayerButton.Location = new System.Drawing.Point(3, 12);
-            this.AddPlayerButton.Name = "AddPlayerButton";
-            this.AddPlayerButton.Size = new System.Drawing.Size(28, 28);
-            this.AddPlayerButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.AddPlayerButton.TabIndex = 47;
-            this.AddPlayerButton.TabStop = false;
-            this.AddPlayerButton.Click += new System.EventHandler(this.AddPlayerButton_Click);
             // 
             // QueueList
             // 
@@ -230,6 +199,7 @@
             // 
             // StartBotButton
             // 
+            this.StartBotButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.StartBotButton.Highlight = true;
             this.StartBotButton.Location = new System.Drawing.Point(173, 350);
             this.StartBotButton.Name = "StartBotButton";
@@ -413,17 +383,6 @@
             this.metroLabel24.TabIndex = 84;
             this.metroLabel24.Text = "Send Now";
             // 
-            // manualSendNowAutomationButton
-            // 
-            this.manualSendNowAutomationButton.Image = global::TwitchBotQueue.Properties.Resources.iconfinder_Tick_2001877;
-            this.manualSendNowAutomationButton.Location = new System.Drawing.Point(0, 315);
-            this.manualSendNowAutomationButton.Name = "manualSendNowAutomationButton";
-            this.manualSendNowAutomationButton.Size = new System.Drawing.Size(28, 28);
-            this.manualSendNowAutomationButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.manualSendNowAutomationButton.TabIndex = 83;
-            this.manualSendNowAutomationButton.TabStop = false;
-            this.manualSendNowAutomationButton.Click += new System.EventHandler(this.manualSendNowAutomationButton_Click);
-            // 
             // metroLabel18
             // 
             this.metroLabel18.AutoSize = true;
@@ -433,17 +392,6 @@
             this.metroLabel18.TabIndex = 82;
             this.metroLabel18.Text = "Stop Automation";
             // 
-            // manualStopAutomationButton
-            // 
-            this.manualStopAutomationButton.Image = global::TwitchBotQueue.Properties.Resources.iconfinder_Stop_2001885;
-            this.manualStopAutomationButton.Location = new System.Drawing.Point(0, 281);
-            this.manualStopAutomationButton.Name = "manualStopAutomationButton";
-            this.manualStopAutomationButton.Size = new System.Drawing.Size(28, 28);
-            this.manualStopAutomationButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.manualStopAutomationButton.TabIndex = 81;
-            this.manualStopAutomationButton.TabStop = false;
-            this.manualStopAutomationButton.Click += new System.EventHandler(this.manualStopAutomationButton_Click);
-            // 
             // metroLabel14
             // 
             this.metroLabel14.AutoSize = true;
@@ -452,17 +400,6 @@
             this.metroLabel14.Size = new System.Drawing.Size(110, 19);
             this.metroLabel14.TabIndex = 80;
             this.metroLabel14.Text = "Start Automation";
-            // 
-            // manualStartAutomationButton
-            // 
-            this.manualStartAutomationButton.Image = global::TwitchBotQueue.Properties.Resources.iconfinder_Play_2001879;
-            this.manualStartAutomationButton.Location = new System.Drawing.Point(0, 247);
-            this.manualStartAutomationButton.Name = "manualStartAutomationButton";
-            this.manualStartAutomationButton.Size = new System.Drawing.Size(28, 28);
-            this.manualStartAutomationButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.manualStartAutomationButton.TabIndex = 79;
-            this.manualStartAutomationButton.TabStop = false;
-            this.manualStartAutomationButton.Click += new System.EventHandler(this.manualStartAutomationButton_Click);
             // 
             // view_AutomationInterval
             // 
@@ -669,17 +606,6 @@
             this.metroLabel10.TabIndex = 58;
             this.metroLabel10.Text = "Add Auto-Message";
             // 
-            // AddAutomationButton
-            // 
-            this.AddAutomationButton.Image = global::TwitchBotQueue.Properties.Resources.iconfinder_Plus_2001887;
-            this.AddAutomationButton.Location = new System.Drawing.Point(3, 329);
-            this.AddAutomationButton.Name = "AddAutomationButton";
-            this.AddAutomationButton.Size = new System.Drawing.Size(28, 28);
-            this.AddAutomationButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.AddAutomationButton.TabIndex = 57;
-            this.AddAutomationButton.TabStop = false;
-            this.AddAutomationButton.Click += new System.EventHandler(this.AddAutomationButton_Click);
-            // 
             // metroTabPage2
             // 
             this.metroTabPage2.Controls.Add(this.metroLabel22);
@@ -813,28 +739,6 @@
             this.metroLabel13.TabIndex = 65;
             this.metroLabel13.Text = "Edit Auto-Message";
             // 
-            // DeleteAutomationButton
-            // 
-            this.DeleteAutomationButton.Image = global::TwitchBotQueue.Properties.Resources.iconfinder_flat_style_circle_delete_trash_1312512;
-            this.DeleteAutomationButton.Location = new System.Drawing.Point(181, 329);
-            this.DeleteAutomationButton.Name = "DeleteAutomationButton";
-            this.DeleteAutomationButton.Size = new System.Drawing.Size(31, 31);
-            this.DeleteAutomationButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.DeleteAutomationButton.TabIndex = 71;
-            this.DeleteAutomationButton.TabStop = false;
-            this.DeleteAutomationButton.Click += new System.EventHandler(this.DeleteAutomationButton_Click);
-            // 
-            // EditAutomationButton
-            // 
-            this.EditAutomationButton.Image = global::TwitchBotQueue.Properties.Resources.iconfinder_Plus_2001887;
-            this.EditAutomationButton.Location = new System.Drawing.Point(3, 329);
-            this.EditAutomationButton.Name = "EditAutomationButton";
-            this.EditAutomationButton.Size = new System.Drawing.Size(28, 28);
-            this.EditAutomationButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.EditAutomationButton.TabIndex = 64;
-            this.EditAutomationButton.TabStop = false;
-            this.EditAutomationButton.Click += new System.EventHandler(this.EditAutomationButton_Click);
-            // 
             // metroLabel9
             // 
             this.metroLabel9.AutoSize = true;
@@ -853,6 +757,126 @@
             this.autoList.TabIndex = 30;
             this.autoList.SelectedIndexChanged += new System.EventHandler(this.autoList_SelectedIndexChanged);
             // 
+            // AboutButton
+            // 
+            this.AboutButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AboutButton.Image = global::TwitchBotQueue.Properties.Resources.iconfinder_Get_Info_12825;
+            this.AboutButton.Location = new System.Drawing.Point(320, 24);
+            this.AboutButton.Name = "AboutButton";
+            this.AboutButton.Size = new System.Drawing.Size(25, 25);
+            this.AboutButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.AboutButton.TabIndex = 29;
+            this.AboutButton.TabStop = false;
+            this.AboutButton.Click += new System.EventHandler(this.AboutButton_Click);
+            // 
+            // ReQueuePlayerButton
+            // 
+            this.ReQueuePlayerButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ReQueuePlayerButton.Image = global::TwitchBotQueue.Properties.Resources.iconfinder_Rewind_2001873;
+            this.ReQueuePlayerButton.Location = new System.Drawing.Point(216, 239);
+            this.ReQueuePlayerButton.Name = "ReQueuePlayerButton";
+            this.ReQueuePlayerButton.Size = new System.Drawing.Size(35, 35);
+            this.ReQueuePlayerButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ReQueuePlayerButton.TabIndex = 50;
+            this.ReQueuePlayerButton.TabStop = false;
+            this.ReQueuePlayerButton.Click += new System.EventHandler(this.ReQueuePlayerButton_Click);
+            // 
+            // DeQueuePlayerButton
+            // 
+            this.DeQueuePlayerButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DeQueuePlayerButton.Image = global::TwitchBotQueue.Properties.Resources.iconfinder_Fast_Forward_2001867;
+            this.DeQueuePlayerButton.Location = new System.Drawing.Point(216, 198);
+            this.DeQueuePlayerButton.Name = "DeQueuePlayerButton";
+            this.DeQueuePlayerButton.Size = new System.Drawing.Size(35, 35);
+            this.DeQueuePlayerButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.DeQueuePlayerButton.TabIndex = 49;
+            this.DeQueuePlayerButton.TabStop = false;
+            this.DeQueuePlayerButton.Click += new System.EventHandler(this.DeQueuePlayerButton_Click);
+            // 
+            // AddPlayerButton
+            // 
+            this.AddPlayerButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddPlayerButton.Image = global::TwitchBotQueue.Properties.Resources.iconfinder_Plus_2001887;
+            this.AddPlayerButton.Location = new System.Drawing.Point(3, 12);
+            this.AddPlayerButton.Name = "AddPlayerButton";
+            this.AddPlayerButton.Size = new System.Drawing.Size(28, 28);
+            this.AddPlayerButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.AddPlayerButton.TabIndex = 47;
+            this.AddPlayerButton.TabStop = false;
+            this.AddPlayerButton.Click += new System.EventHandler(this.AddPlayerButton_Click);
+            // 
+            // manualSendNowAutomationButton
+            // 
+            this.manualSendNowAutomationButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.manualSendNowAutomationButton.Image = global::TwitchBotQueue.Properties.Resources.iconfinder_Tick_2001877;
+            this.manualSendNowAutomationButton.Location = new System.Drawing.Point(0, 315);
+            this.manualSendNowAutomationButton.Name = "manualSendNowAutomationButton";
+            this.manualSendNowAutomationButton.Size = new System.Drawing.Size(28, 28);
+            this.manualSendNowAutomationButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.manualSendNowAutomationButton.TabIndex = 83;
+            this.manualSendNowAutomationButton.TabStop = false;
+            this.manualSendNowAutomationButton.Click += new System.EventHandler(this.manualSendNowAutomationButton_Click);
+            // 
+            // manualStopAutomationButton
+            // 
+            this.manualStopAutomationButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.manualStopAutomationButton.Image = global::TwitchBotQueue.Properties.Resources.iconfinder_Stop_2001885;
+            this.manualStopAutomationButton.Location = new System.Drawing.Point(0, 281);
+            this.manualStopAutomationButton.Name = "manualStopAutomationButton";
+            this.manualStopAutomationButton.Size = new System.Drawing.Size(28, 28);
+            this.manualStopAutomationButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.manualStopAutomationButton.TabIndex = 81;
+            this.manualStopAutomationButton.TabStop = false;
+            this.manualStopAutomationButton.Click += new System.EventHandler(this.manualStopAutomationButton_Click);
+            // 
+            // manualStartAutomationButton
+            // 
+            this.manualStartAutomationButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.manualStartAutomationButton.Image = global::TwitchBotQueue.Properties.Resources.iconfinder_Play_2001879;
+            this.manualStartAutomationButton.Location = new System.Drawing.Point(0, 247);
+            this.manualStartAutomationButton.Name = "manualStartAutomationButton";
+            this.manualStartAutomationButton.Size = new System.Drawing.Size(28, 28);
+            this.manualStartAutomationButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.manualStartAutomationButton.TabIndex = 79;
+            this.manualStartAutomationButton.TabStop = false;
+            this.manualStartAutomationButton.Click += new System.EventHandler(this.manualStartAutomationButton_Click);
+            // 
+            // AddAutomationButton
+            // 
+            this.AddAutomationButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddAutomationButton.Image = global::TwitchBotQueue.Properties.Resources.iconfinder_Plus_2001887;
+            this.AddAutomationButton.Location = new System.Drawing.Point(3, 329);
+            this.AddAutomationButton.Name = "AddAutomationButton";
+            this.AddAutomationButton.Size = new System.Drawing.Size(28, 28);
+            this.AddAutomationButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.AddAutomationButton.TabIndex = 57;
+            this.AddAutomationButton.TabStop = false;
+            this.AddAutomationButton.Click += new System.EventHandler(this.AddAutomationButton_Click);
+            // 
+            // DeleteAutomationButton
+            // 
+            this.DeleteAutomationButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DeleteAutomationButton.Image = global::TwitchBotQueue.Properties.Resources.iconfinder_flat_style_circle_delete_trash_1312512;
+            this.DeleteAutomationButton.Location = new System.Drawing.Point(181, 329);
+            this.DeleteAutomationButton.Name = "DeleteAutomationButton";
+            this.DeleteAutomationButton.Size = new System.Drawing.Size(31, 31);
+            this.DeleteAutomationButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.DeleteAutomationButton.TabIndex = 71;
+            this.DeleteAutomationButton.TabStop = false;
+            this.DeleteAutomationButton.Click += new System.EventHandler(this.DeleteAutomationButton_Click);
+            // 
+            // EditAutomationButton
+            // 
+            this.EditAutomationButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.EditAutomationButton.Image = global::TwitchBotQueue.Properties.Resources.iconfinder_Plus_2001887;
+            this.EditAutomationButton.Location = new System.Drawing.Point(3, 329);
+            this.EditAutomationButton.Name = "EditAutomationButton";
+            this.EditAutomationButton.Size = new System.Drawing.Size(28, 28);
+            this.EditAutomationButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.EditAutomationButton.TabIndex = 64;
+            this.EditAutomationButton.TabStop = false;
+            this.EditAutomationButton.Click += new System.EventHandler(this.EditAutomationButton_Click);
+            // 
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
@@ -864,6 +888,7 @@
             // 
             // MainCloseButton
             // 
+            this.MainCloseButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MainCloseButton.Image = global::TwitchBotQueue.Properties.Resources.iconfinder_Close_2001866;
             this.MainCloseButton.Location = new System.Drawing.Point(455, 22);
             this.MainCloseButton.Name = "MainCloseButton";
@@ -875,6 +900,7 @@
             // 
             // MinimizeButton
             // 
+            this.MinimizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MinimizeButton.Image = global::TwitchBotQueue.Properties.Resources.iconfinder_Retract_2001886;
             this.MinimizeButton.Location = new System.Drawing.Point(429, 30);
             this.MinimizeButton.Name = "MinimizeButton";
@@ -886,6 +912,7 @@
             // 
             // SettingsButton
             // 
+            this.SettingsButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SettingsButton.Image = global::TwitchBotQueue.Properties.Resources.iconfinder_Settings_2001888;
             this.SettingsButton.Location = new System.Drawing.Point(286, 22);
             this.SettingsButton.Name = "SettingsButton";
@@ -902,6 +929,7 @@
             this.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(510, 502);
             this.ControlBox = false;
+            this.Controls.Add(this.AboutButton);
             this.Controls.Add(this.metroTabControl1);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.MainCloseButton);
@@ -916,22 +944,23 @@
             this.metroTabControl1.ResumeLayout(false);
             this.QueueTab.ResumeLayout(false);
             this.QueueTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ReQueuePlayerButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DeQueuePlayerButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AddPlayerButton)).EndInit();
             this.AutomationTab.ResumeLayout(false);
             this.AutomationTab.PerformLayout();
             this.metroTabControl2.ResumeLayout(false);
             this.metroTabPage3.ResumeLayout(false);
             this.metroTabPage3.PerformLayout();
+            this.metroTabPage1.ResumeLayout(false);
+            this.metroTabPage1.PerformLayout();
+            this.metroTabPage2.ResumeLayout(false);
+            this.metroTabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AboutButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReQueuePlayerButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DeQueuePlayerButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddPlayerButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.manualSendNowAutomationButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.manualStopAutomationButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.manualStartAutomationButton)).EndInit();
-            this.metroTabPage1.ResumeLayout(false);
-            this.metroTabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddAutomationButton)).EndInit();
-            this.metroTabPage2.ResumeLayout(false);
-            this.metroTabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DeleteAutomationButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EditAutomationButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -1011,6 +1040,7 @@
         private System.Windows.Forms.PictureBox manualStartAutomationButton;
         public MetroFramework.Controls.MetroTabPage metroTabPage3;
         public MetroFramework.Controls.MetroComboBox edit_Minutes;
+        private System.Windows.Forms.PictureBox AboutButton;
     }
 }
 

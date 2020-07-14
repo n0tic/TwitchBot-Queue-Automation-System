@@ -103,6 +103,16 @@ namespace TwitchBotQueue.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_Get_Info_12825 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_Get Info_12825", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconfinder_Play_2001879 {
             get {
                 object obj = ResourceManager.GetObject("iconfinder_Play_2001879", resourceCulture);
@@ -166,6 +176,16 @@ namespace TwitchBotQueue.Properties {
         internal static System.Drawing.Bitmap iconfinder_Tick_2001877 {
             get {
                 object obj = ResourceManager.GetObject("iconfinder_Tick_2001877", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SmallImageRender {
+            get {
+                object obj = ResourceManager.GetObject("SmallImageRender", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

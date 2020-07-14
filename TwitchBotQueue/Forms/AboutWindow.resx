@@ -117,44 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Cog" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cog.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="metroTextBox1.Text" xml:space="preserve">
+    <value>This software was developed to make it easy to download streamed videos. It requires ffmpeg software to download and transcode the streams. Manual inputs of file locations and names are required in settings.</value>
   </data>
-  <data name="iconfinder_Settings_2001888" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconfinder_Settings_2001888.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconfinder_Tick_2001877" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconfinder_Tick_2001877.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconfinder_Play_2001879" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconfinder_Play_2001879.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconfinder_Fast_Forward_2001867" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconfinder_Fast_Forward_2001867.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconfinder_Close_2001866" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconfinder_Close_2001866.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SmallImageRender" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SmallImageRender1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconfinder_Plus_2001887" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconfinder_Plus_2001887.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconfinder_Retract_2001886" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconfinder_Retract_2001886.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconfinder_flat-style-circle-delete-trash_1312512" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconfinder_flat-style-circle-delete-trash_1312512.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconfinder_Stop_2001885" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconfinder_Stop_2001885.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconfinder_Rewind_2001873" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconfinder_Rewind_2001873.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconfinder_Get Info_12825" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconfinder_Get Info_12825.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
   </data>
 </root>
