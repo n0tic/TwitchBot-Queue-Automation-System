@@ -1,9 +1,9 @@
 # TwitchBot Queue & Automation System
 
 ![](http://bytevaultstudio.se/ShareX/TwitchBotQueue_BSF7g8ctYd.png)
-![](http://bytevaultstudio.se/ShareX/8Xkw4cWavC.png)
-![](http://bytevaultstudio.se/ShareX/TwitchBotQueue_8JJakVq66v.png)
-![](http://bytevaultstudio.se/ShareX/TwitchBotQueue_lfpKKphmAb.png)
+![](http://bytevaultstudio.se/ShareX/TwitchBotQueue_PcAL67rkCI.png)
+![](http://bytevaultstudio.se/ShareX/TwitchBotQueue_ANSwdxY30D.png)
+![](http://bytevaultstudio.se/ShareX/TwitchBotQueue_VAL29EL0f4.png)
 
 ## The idea
 This would be perfect for when you are making gathers or simply was challanged by one of your viewers.
