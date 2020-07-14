@@ -1,4 +1,4 @@
-# TwitchBot Queue System
+# TwitchBot Queue & Automation System
 
 ![](http://bytevaultstudio.se/ShareX/chrome_PHcT1UvggU2.png)
 
